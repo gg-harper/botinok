@@ -19,7 +19,7 @@ import java.util.List;
 
 public class Bot extends TelegramLongPollingBot {
 	private static final Logger log = LoggerFactory.getLogger(Bot.class);
-	final private String BOT_TOKEN = "6041836637:AAFKIZ_vcEXQi7mT4dG-J4oXsG3ByGbuu8o";
+	final private static String BOT_TOKEN = "6041836637:AAFKIZ_vcEXQi7mT4dG-J4oXsG3ByGbuu8o";
 	final private String BOT_NAME = "r_solo_bot";
 
 	ReplyKeyboardMarkup replyKeyboardMarkup;
@@ -27,8 +27,10 @@ public class Bot extends TelegramLongPollingBot {
 	Logic logic;
 
 	Bot() {
+		super(BOT_TOKEN);
 		logic = new Logic();
 	}
+
 	@Override
 	public String getBotUsername() {
 		return BOT_NAME;
